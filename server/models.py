@@ -22,7 +22,6 @@ class Article(db.Model, SerializerMixin):
 
     def __repr__(self):
         return f'Article {self.id} by {self.author}'
-
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
@@ -32,4 +31,4 @@ class User(db.Model, SerializerMixin):
     articles = db.relationship('Article', backref='user')
 
     def __repr__(self):
-        return f'U
+        return f'User {self.username}, ID {self.id}'
